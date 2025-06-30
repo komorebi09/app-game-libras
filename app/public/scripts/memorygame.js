@@ -66,7 +66,6 @@ function flip() {
   }
 
   card2 = this;
-  totalPares++;
   lockcard = true;
   console.log(`
     card1: ${card1}
@@ -85,7 +84,8 @@ function comparar() {
 function matarPar() {
   card1.removeEventListener("click", flip);
   card2.removeEventListener("click", flip);
-
+  totalPares++;
+  updateProgressBar();
   novaJogada();
 }
 
@@ -108,4 +108,10 @@ function restart() {
   gameContent.innerHTML = "";
   embaralhar();
   distribuir();
+}
+
+function updateProgressBar() {
+  const bar = document.querySelector(".bar");
+  const cstyle = getComputedStyle(bar);
+  bar.style.setProperty("--width", totalPares / objetivo);
 }
