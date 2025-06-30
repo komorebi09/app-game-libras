@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../public/styles/style.css" />
+    <link rel="stylesheet" href="../../../public/styles/game.memoria.css" />
+    <script src="../../../public/scripts/memorygame.js" defer></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="progress-bar"></div>
+      <div class="guia-libras">
+        Inserir o widget de libras aqui (se possível, não é bem documentado)
+        <div vw class="enabled">
+          <div vw-access-button class="active"></div>
+          <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+          </div>
+        </div>
+      </div>
+      <div class="game-content">
+        <div class="card-display"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+  </body>
+</html>
