@@ -1,0 +1,120 @@
+.container {
+  margin: 0 4rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  box-shadow: 30px 30px lightblue;
+  z-index: 0;
+}
+
+.game-content {
+  margin: 1rem 2rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 80vh;
+  background-image: radial-gradient(rgb(245, 245, 245) 5%, transparent 60%);
+  border: 1px solid black;
+}
+
+.visual {
+  display: grid;
+  grid-template-rows: 5fr 2fr;
+}
+
+.ilustracao {
+  --wdt: 60%;
+  margin: auto;
+  width: var(--wdt);
+  object-fit: contain;
+  border: 1px solid black;
+  border-radius: 1rem;
+  box-shadow: 20px 20px lightblue;
+}
+
+.ilustracao:hover {
+  animation: imgHoverAnim 400ms ease-in-out 0s 1 normal forwards;
+}
+
+.hid {
+  display: none;
+}
+
+.word {
+  text-align: center;
+  font-size: 3rem;
+  border: 1px solid black;
+  width: fit-content;
+  margin: auto;
+  padding: 1rem 5rem;
+}
+
+#initial {
+  font-weight: bolder;
+}
+
+.opcoes {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  --x: 100px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  box-shadow: 20px 20px lightblue;
+  border-radius: 1rem;
+}
+
+li {
+  height: var(--x);
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  align-content: center;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+li:hover {
+  opacity: 0.8;
+  height: calc(var(--x) * 1.2);
+  animation: buttonHoverAnim 400ms ease-in-out 0s 1 normal forwards;
+  cursor: pointer;
+}
+
+@keyframes buttonHoverAnim {
+  0% {
+    font-size: 3rem;
+  }
+  50% {
+    height: calc(var(--x) * 1.5);
+    font-size: 5rem;
+  }
+  100% {
+    height: calc(var(--x) * 1.4);
+    font-size: 4rem;
+  }
+}
+
+@keyframes imgHoverAnim {
+  0% {
+    width: calc(var(--wdt) * 1);
+  }
+  100% {
+    width: calc(var(--wdt) * 1.1);
+    rotate: 5deg;
+  }
+}
+
+@keyframes showDica {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

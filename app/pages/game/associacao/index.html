@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Associação</title>
+    <link rel="stylesheet" href="../../../public/styles/style.css" />
+    <link rel="stylesheet" href="../../../public/styles/game.associacao.css" />
+    <script src="../../../public/scripts/associacaogame.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="game-content">
+        <div class="visual">
+          <img class="ilustracao" onclick="showDica(true)" />
+          <p class="word hid">
+            <span id="initial"></span><span id="noninitial"></span>
+          </p>
+        </div>
+        <div class="opcoes">
+          <ul class="op-select">
+            <li class="op op-a" onclick="selectAlt(this)"></li>
+            <li class="op op-b" onclick="selectAlt(this)"></li>
+            <li class="op op-c" onclick="selectAlt(this)"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+  </body>
+</html>

@@ -3,27 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Jogo da Memória</title>
     <link rel="stylesheet" href="../../../public/styles/style.css" />
     <link rel="stylesheet" href="../../../public/styles/game.memoria.css" />
     <script src="../../../public/scripts/memorygame.js" defer></script>
   </head>
   <body>
-    <div class="grid-container">
+    <div class="container">
       <div class="progress-bar">
         <div class="bar"></div>
       </div>
-      <div class="guia-libras">
-        Inserir o widget de libras aqui (se for possível, não é bem documentado)
-        <div vw class="enabled">
-          <div vw-access-button class="active"></div>
-          <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-          </div>
-        </div>
-      </div>
       <div class="game-content">
         <div class="card-display"></div>
+      </div>
+    </div>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
       </div>
     </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
