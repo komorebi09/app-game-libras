@@ -1,10 +1,16 @@
 [
-  { "img": "../../../public/media/images/bicicleta.png", "nome": "Bicicleta" },
-  { "img": "../../../public/media/images/blusa.svg", "nome": "Blusa" },
-  { "img": "../../../public/media/images/bola.svg", "nome": "Bola" },
-  { "img": "../../../public/media/images/carro.png", "nome": "Carro" },
-  { "img": "../../../public/media/images/joaninha.png", "nome": "Joaninha" },
-  { "img": "../../../public/media/images/sapato.svg", "nome": "Sapato" },
-  { "img": "../../../public/media/images/sapo.png", "nome": "Sapo" },
-  { "img": "../../../public/media/images/sol.png", "nome": "Sol" }
+  {
+    "img": "../../../public/media/images/memor/bicicleta.png",
+    "nome": "Bicicleta"
+  },
+  { "img": "../../../public/media/images/memor/blusa.svg", "nome": "Blusa" },
+  { "img": "../../../public/media/images/memor/bola.svg", "nome": "Bola" },
+  { "img": "../../../public/media/images/memor/carro.png", "nome": "Carro" },
+  {
+    "img": "../../../public/media/images/memor/joaninha.png",
+    "nome": "Joaninha"
+  },
+  { "img": "../../../public/media/images/memor/sapato.svg", "nome": "Sapato" },
+  { "img": "../../../public/media/images/memor/sapo.png", "nome": "Sapo" },
+  { "img": "../../../public/media/images/memor/sol.png", "nome": "Sol" }
 ]
