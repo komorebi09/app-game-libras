@@ -1,3 +1,9 @@
+.container {
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+  height: 100vh;
+}
+
 header {
   display: flex;
   padding-inline: 16px;
@@ -25,9 +31,14 @@ nav div:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.title {
+.navtitle {
   font-weight: 600;
   font-size: 1.2rem;
+}
+
+.config {
+  margin: 1rem;
+  padding: 1rem;
 }
 
 a {
@@ -48,4 +59,34 @@ a:hover {
 
 a:active {
   text-decoration: none;
+}
+
+.config a {
+  color: blue;
+}
+
+.config a:link {
+  text-decoration: underline;
+}
+
+button.salvar {
+  padding: 7px;
+  width: 150px;
+  text-align: center;
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button.excluir {
+  padding: 7px;
+  width: 150px;
+  text-align: center;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }

@@ -45,6 +45,7 @@
   margin: 0 2rem 1rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   grid-area: g-content;
   height: 80vh;
   background-image: radial-gradient(rgb(245, 245, 245) 5%, transparent 60%);

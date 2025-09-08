@@ -1,11 +1,15 @@
+storageFunc();
+
 const gameContent = document.querySelector(".card-display");
 gameContent.innerHTML = "";
 var cards = [];
 var card1 = null,
   card2 = null;
 var lockcard = false;
-const objetivo = 8;
+const objetivo = Number(getMemoriaCardN());
 var totalPares = 0;
+
+var jogadas = 0;
 
 fetch("../../../public/data/memoria.json")
   .then((res) => res.json())
@@ -79,6 +83,7 @@ function comparar() {
   const x = card1.dataset.nome === card2.dataset.nome;
   if (x) matarPar();
   else desfazerJogada();
+  jogadas++;
 }
 
 function matarPar() {

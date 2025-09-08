@@ -1,5 +1,7 @@
+storageFunc();
+
 var wordset = [];
-var index = 9;
+var index = Number(getPalavrasAssocN());
 var word = "";
 
 const azul = "#9dcfeeff",
@@ -44,7 +46,7 @@ function shuffleAltern(ch) {
 }
 
 function gameStep() {
-  if (index == -1) return;
+  if (index == 0) return;
   console.log(wordset[index]);
   document.getElementsByClassName("word")[0].classList.add("hid");
   document.getElementsByClassName("ilustracao")[0].src = wordset[index].img;

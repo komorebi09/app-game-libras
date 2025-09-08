@@ -2,6 +2,12 @@ body {
   text-align: center;
 }
 
+.container {
+  display: grid;
+  grid-template-rows: 5fr 1fr;
+  height: 100vh;
+}
+
 header {
   display: flex;
   padding-inline: 16px;
