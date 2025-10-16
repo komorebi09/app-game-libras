@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo das Peças</title>
+    <link rel="stylesheet" href="../../../public/styles/style.css" />
+    <link rel="stylesheet" href="../../../public/styles/game.pecas.css" />
+    <script src="../../../public/scripts/storageManage.js"></script>
+    <script src="../../../public/scripts/pecasgame.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="game-content">
+        <div class="slot-house">
+          <div id="slot1" class="slot"></div>
+          <div id="slot2" class="slot"></div>
+          <div id="slot3" class="slot"></div>
+        </div>
+        <div class="peca-house">
+          <div id="peca1" class="peca">asdas</div>
+          <div id="peca2" class="peca">adas</div>
+          <div id="peca3" class="peca">asdsa</div>
+        </div>
+      </div>
+    </div>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+  </body>
+</html>

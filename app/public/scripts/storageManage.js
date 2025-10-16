@@ -19,14 +19,24 @@ function getPalavrasAssocN() {
   return localStorage.getItem("libras-game-app-palassoc");
 }
 
+function setPecasN(n) {
+  localStorage.setItem("libras-game-app-pecasn", n);
+}
+
+function getPecasN() {
+  return localStorage.getItem("libras-game-app-pecasn");
+}
+
 function createStorage() {
   setMemoriaCardN(8);
   setPalavrasAssocN(7);
+  setPecasN(5);
   localStorage.setItem("libras-game-app", "true");
 }
 
 function dropStorage() {
   localStorage.removeItem("libras-game-app-memn");
   localStorage.removeItem("libras-game-app-palassoc");
+  localStorage.removeItem("libras-game-app-pecasn");
   localStorage.removeItem("libras-game-app");
 }

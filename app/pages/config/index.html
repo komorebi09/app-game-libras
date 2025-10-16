@@ -6,6 +6,7 @@
     <title>Jogo Libras</title>
     <link rel="stylesheet" href="../../public/styles/style.css" />
     <link rel="stylesheet" href="../../public/styles/config.css" />
+    <link rel="stylesheet" href="../../public/styles/popup.css" />
     <script src="../../public/scripts/storageManage.js"></script>
     <script>
       function salvar() {
@@ -22,67 +23,69 @@
     </script>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <nav>
-          <a href="../home/index.html"
-            ><div class="navtitle">Jogo Libras</div>
-          </a>
-          <a href="../config/index.html"><div>Configurações</div></a>
-          <a href="../sobre/index.html"><div>Sobre</div></a>
-        </nav>
-      </header>
-      <div class="config">
-        <h1>Configurações</h1>
-        <hr />
-        <h2>Acessibilidade</h2>
-        <p>
-          Preferências do VLibras:
-          <a
-            href="https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/vlibras"
-            >documentação de uso do VLibras</a
-          >
-        </p>
-        <hr />
-        <h2>Jogos</h2>
-        <h3>Jogo da Memória</h3>
-        <label>Total de pares de cartas:</label>
-        <select id="paresCartas">
-          <option value="2">2</option>
-          <option value="4">4</option>
-          <option value="6">6</option>
-          <option value="8" selected>8</option>
-        </select>
-        <h3>Jogo de Associação</h3>
-        <label>Número total de palavras associadas:</label>
-        <select id="palavrasAssoc">
-          <option value="3">3</option>
-          <option value="5">5</option>
-          <option value="7" selected>7</option>
-          <option value="9">9</option>
-          <option value="12">12</option>
-          <option value="15">15</option>
-          <option value="18">18</option>
-        </select>
-        <h3>(Em Manutenção)</h3>
-        <p>Em Manutenção</p>
-        <button class="salvar" onclick="salvar()">Salvar mudanças</button>
-        <hr />
-        <h2>Dados</h2>
-        <button class="excluir" onclick="excluir()">
-          Excluir todos os dados
-        </button>
-      </div>
-      <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
+    <div class="common-content">
+      <div class="container">
+        <header>
+          <nav>
+            <a href="../home/index.html"
+              ><div class="navtitle">Jogo Libras</div>
+            </a>
+            <a href="../config/index.html"><div>Configurações</div></a>
+            <a href="../sobre/index.html"><div>Sobre</div></a>
+          </nav>
+        </header>
+        <div class="config">
+          <h1>Configurações</h1>
+          <hr />
+          <h2>Acessibilidade</h2>
+          <p>
+            Preferências do VLibras:
+            <a
+              href="https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/vlibras"
+              >documentação de uso do VLibras</a
+            >
+          </p>
+          <hr />
+          <h2>Jogos</h2>
+          <h3>Jogo da Memória</h3>
+          <label>Total de pares de cartas:</label>
+          <select id="paresCartas">
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8" selected>8</option>
+          </select>
+          <h3>Jogo de Associação</h3>
+          <label>Número total de palavras associadas:</label>
+          <select id="palavrasAssoc">
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="7" selected>7</option>
+            <option value="9">9</option>
+            <option value="12">12</option>
+            <option value="15">15</option>
+            <option value="18">18</option>
+          </select>
+          <h3>(Em Manutenção)</h3>
+          <p>Em Manutenção</p>
+          <button class="salvar" onclick="salvar()">Salvar mudanças</button>
+          <hr />
+          <h2>Dados</h2>
+          <button class="excluir" onclick="excluir()">
+            Excluir todos os dados
+          </button>
         </div>
+        <div vw class="enabled">
+          <div vw-access-button class="active"></div>
+          <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+          </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+          new window.VLibras.Widget("https://vlibras.gov.br/app");
+        </script>
       </div>
-      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-      <script>
-        new window.VLibras.Widget("https://vlibras.gov.br/app");
-      </script>
     </div>
   </body>
 </html>

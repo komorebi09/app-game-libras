@@ -1,0 +1,54 @@
+.container {
+  margin: 0 4rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  box-shadow: 30px 30px lightblue;
+  z-index: 0;
+}
+
+.game-content {
+  display: grid;
+  margin: 1rem 2rem;
+  height: 80vh;
+  background-image: radial-gradient(rgb(245, 245, 245) 5%, transparent 60%);
+  border: 1px solid black;
+}
+
+.slot-house,
+.peca-house {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.slot,
+.peca {
+  margin: 0 3rem;
+  border: 1px solid black;
+}
+
+.slot {
+  border-radius: 1rem;
+}
+
+.peca {
+  cursor: grab;
+  padding: 0.5rem;
+}
+
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
+
+#mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196f3;
+  color: #fff;
+}

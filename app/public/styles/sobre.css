@@ -1,0 +1,34 @@
+.sobre {
+  margin: 0 auto;
+  padding: 1rem;
+  width: 70vw;
+}
+
+h1,
+h2,
+p {
+  text-align: center;
+}
+
+.integrante-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+}
+
+.integrante-grid div {
+  display: block;
+  border: 1px solid black;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+
+.integrante-grid img {
+  display: block;
+  width: 40%;
+  margin: auto;
+}
+
+.desc {
+  color: grey;
+}
