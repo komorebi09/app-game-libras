@@ -25,7 +25,8 @@ p {
 
 .integrante-grid img {
   display: block;
-  width: 40%;
+  width: 150px;
+  height: 200px;
   margin: auto;
 }
 

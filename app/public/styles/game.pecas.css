@@ -25,11 +25,16 @@
 .slot,
 .peca {
   margin: 0 3rem;
+  padding: 1rem;
   border: 1px solid black;
 }
 
-.slot {
+.textslot {
   border-radius: 1rem;
+  border: 1px dashed black;
+  padding: 0.5rem;
+  width: 3rem;
+  height: 1rem;
 }
 
 .peca {

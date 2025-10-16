@@ -24,6 +24,46 @@ function getItens() {
     });
 }
 
+var pecas,
+  slots,
+  selected = null;
+
+prepareGame();
+
+function prepareImg() {
+  const imgslots = document.getElementsByClassName("imgslot");
+  for (let i = 0; i < objetivo; i++) {
+    imgslots[i].setAttribute("src", grupo[i]);
+  }
+}
+
+function prepareGame() {
+  pecas = document.getElementsByClassName("peca");
+  slots = document.getElementsByClassName("slot");
+  selected = null;
+
+  for (let peca of pecas) {
+    peca.addEventListener("dragstart", (e) => {
+      selected = e.target;
+      console.log("selected!");
+      console.log(selected);
+    });
+  }
+
+  for (let slot of slots) {
+    slot.addEventListener("dragover", (e) => {
+      e.preventDefault();
+    });
+    slot.addEventListener("drop", (e) => {
+      slot.appendChild(selected.cloneNode(true));
+      selected.remove();
+      selected = null;
+      console.log("drop");
+    });
+  }
+}
+
+/*
 dragElement(document.getElementById("peca1"));
 dragElement(document.getElementById("peca2"));
 dragElement(document.getElementById("peca3"));
@@ -67,3 +107,4 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+*/
