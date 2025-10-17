@@ -92,6 +92,9 @@ function matarPar() {
   totalPares++;
   updateProgressBar();
   novaJogada();
+  if (totalPares == objetivo) {
+    alert("parabéns");
+  }
 }
 
 function desfazerJogada() {
