@@ -6,8 +6,10 @@
     <title>Jogo de Associação</title>
     <link rel="stylesheet" href="../../../public/styles/style.css" />
     <link rel="stylesheet" href="../../../public/styles/game.associacao.css" />
+    <link rel="stylesheet" href="../../../public/styles/gamepopup.css" />
     <script src="../../../public/scripts/storageManage.js"></script>
     <script src="../../../public/scripts/associacaogame.js" defer></script>
+    <script src="../../../public/scripts/openpopup.js"></script>
   </head>
   <body>
     <div class="container">
@@ -25,6 +27,24 @@
             <li class="op op-c" onclick="selectAlt(this)"></li>
           </ul>
         </div>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <p>Parabéns!</p>
+        <p>Número de acertos: <span id="acertos">0</span></p>
+        <a href="../../home/index.html"
+          ><img
+            src="../../../public/media/icons/home.png"
+            class="modal-button"
+          />
+        </a>
+        <a href="../../game/pecas/index.html"
+          ><img
+            src="../../../public/media/images/retry.jpg"
+            class="modal-button"
+          />
+        </a>
       </div>
     </div>
     <div vw class="enabled">

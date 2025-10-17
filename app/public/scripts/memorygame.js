@@ -93,7 +93,7 @@ function matarPar() {
   updateProgressBar();
   novaJogada();
   if (totalPares == objetivo) {
-    alert("parabéns");
+    openModal();
   }
 }
 

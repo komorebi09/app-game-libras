@@ -1,8 +1,23 @@
+storageFunc();
+
 const gameContent = document.querySelector(".game-content");
 var grupo = [];
 const objetivo = Number(getPecasN());
 const slotEl = document.getElementsByClassName("slot")[0].cloneNode(true);
 const pecaEl = document.getElementsByClassName("peca")[0].cloneNode(true);
+
+function scramble(_arr) {
+  var index = _arr.length;
+  var rndIndex, temp;
+  while (index > 1) {
+    for (let i = 0; i < 2; i++) {
+      rndIndex = Math.floor(Math.random() * index--);
+    }
+    temp = _arr[index];
+    _arr[index] = _arr[rndIndex];
+    _arr[rndIndex] = temp;
+  }
+}
 
 getItens();
 
@@ -14,17 +29,9 @@ function getItens() {
       data.forEach((obj) => {
         grupo.push({ nome: obj.nome, img: obj.img });
       });
-      let index = grupo.length;
-      let rndIndex, temp;
-      while (index !== 0) {
-        for (let i = 0; i < 2; i++) {
-          rndIndex = Math.floor(Math.random() * index--);
-        }
-        temp = grupo[index];
-        grupo[index] = grupo[rndIndex];
-        grupo[rndIndex] = temp;
-      }
+      scramble(grupo);
       grupo = grupo.slice(0, objetivo);
+      console.log(grupo);
       prepareGame();
     });
 }
@@ -64,8 +71,20 @@ function prepareImg() {
     imgslots[i].src = grupo[i].img;
   }
 
+  var arr = [];
+
+  for (let i = 0; i < grupo.length; i++) {
+    let x = grupo[i].nome;
+    console.log(x);
+    arr.push(x);
+  }
+
+  scramble(arr);
+
+  console.log(arr);
+
   for (let i = 0; i < objetivo; i++) {
-    pecas[i].innerText = grupo[i].nome;
+    pecas[i].innerText = arr[i];
   }
 
   for (let peca of pecas) {
@@ -87,9 +106,9 @@ function prepareImg() {
       console.log("drop");
       if (noPecasLeft()) {
         if (verificarVitoria()) {
-          alert("eee");
+          openModal();
         } else {
-          alert("a naoo");
+          resetarpecas();
         }
       }
     });

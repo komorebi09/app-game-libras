@@ -1,0 +1,53 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal a {
+  text-decoration: none;
+}
+
+.modal.open {
+  opacity: 1;
+  z-index: 10;
+  animation: modalOpen 400ms ease-in-out 0s 1 normal forwards;
+}
+
+.modal-content {
+  width: 50vw;
+  font-size: 3rem;
+  background-color: azure;
+  border-radius: 1rem;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.modal-button,
+.modal-button {
+  margin: auto;
+  height: 4rem;
+  width: 4rem;
+  border: 1px solid black;
+  border-radius: 10rem;
+  padding: 1rem;
+}
+
+@keyframes modalOpen {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}

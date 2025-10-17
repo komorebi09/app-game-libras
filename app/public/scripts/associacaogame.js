@@ -3,6 +3,7 @@ storageFunc();
 var wordset = [];
 var index = Number(getPalavrasAssocN());
 var word = "";
+var acertos = 0;
 
 const azul = "#9dcfeeff",
   rosa = "#FFD1DC",
@@ -46,7 +47,12 @@ function shuffleAltern(ch) {
 }
 
 function gameStep() {
-  if (index == 0) return;
+  if (index == 0) {
+    openModal();
+    document.getElementById("acertos").innerText = acertos;
+    addPalavrasAssocAcertos(acertos);
+    return;
+  }
   console.log(wordset[index]);
   document.getElementsByClassName("word")[0].classList.add("hid");
   document.getElementsByClassName("ilustracao")[0].src = wordset[index].img;
@@ -61,8 +67,8 @@ function gameStep() {
 
 function selectAlt(item) {
   if (item.innerText == word.charAt(0)) {
-    alert("certo");
-  } else alert("errado");
+    acertos++;
+  }
 
   showDica(false);
 
