@@ -1,8 +1,13 @@
 const gameContent = document.querySelector(".game-content");
 var grupo = [];
 const objetivo = Number(getPecasN());
+const slotEl = document.getElementsByClassName("slot")[0].cloneNode(true);
+const pecaEl = document.getElementsByClassName("peca")[0].cloneNode(true);
+
+getItens();
 
 function getItens() {
+  grupo = [];
   fetch("../../../public/data/memoria.json")
     .then((res) => res.json())
     .then((data) => {
@@ -20,7 +25,7 @@ function getItens() {
         grupo[rndIndex] = temp;
       }
       grupo = grupo.slice(0, objetivo);
-      console.log(grupo);
+      prepareGame();
     });
 }
 
@@ -28,19 +33,40 @@ var pecas,
   slots,
   selected = null;
 
-prepareGame();
+function prepareGame() {
+  document.getElementsByClassName("slot-house")[0].innerHTML = "";
+  document.getElementsByClassName("peca-house")[0].innerHTML = "";
 
-function prepareImg() {
-  const imgslots = document.getElementsByClassName("imgslot");
-  for (let i = 0; i < objetivo; i++) {
-    imgslots[i].setAttribute("src", grupo[i]);
-  }
+  selected = null;
+
+  prepareImg();
 }
 
-function prepareGame() {
+function prepareImg() {
+  const slothouse = document.getElementsByClassName("slot-house")[0];
+  const pecahouse = document.getElementsByClassName("peca-house")[0];
+
+  for (let i = 0; i < objetivo; i++) {
+    console.log(i);
+    slothouse.appendChild(slotEl.cloneNode(true));
+  }
+
+  for (let i = 0; i < objetivo; i++) {
+    console.log(i);
+    pecahouse.appendChild(pecaEl.cloneNode(true));
+  }
+
+  const imgslots = document.getElementsByClassName("imgslot");
   pecas = document.getElementsByClassName("peca");
   slots = document.getElementsByClassName("slot");
-  selected = null;
+
+  for (let i = 0; i < objetivo; i++) {
+    imgslots[i].src = grupo[i].img;
+  }
+
+  for (let i = 0; i < objetivo; i++) {
+    pecas[i].innerText = grupo[i].nome;
+  }
 
   for (let peca of pecas) {
     peca.addEventListener("dragstart", (e) => {
@@ -59,8 +85,38 @@ function prepareGame() {
       selected.remove();
       selected = null;
       console.log("drop");
+      if (noPecasLeft()) {
+        if (verificarVitoria()) {
+          alert("eee");
+        } else {
+          alert("a naoo");
+        }
+      }
     });
   }
+
+  function noPecasLeft() {
+    const pecas = document.getElementsByClassName("peca-house")[0];
+    for (peca of pecas.childNodes) {
+      if (peca.className == "peca") {
+        return false;
+      }
+    }
+    return true;
+  }
+}
+
+function resetarpecas() {
+  prepareGame();
+}
+
+function verificarVitoria() {
+  for (let i = 0; i < objetivo; i++) {
+    if (grupo[i].nome != slots[i].innerText) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /*

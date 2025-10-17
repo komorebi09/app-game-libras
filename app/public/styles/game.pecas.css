@@ -24,9 +24,42 @@
 
 .slot,
 .peca {
-  margin: 0 3rem;
+  margin: 0 1rem;
   padding: 1rem;
+}
+
+.peca {
+  --wdt: 5rem;
+  width: var(--wdt);
+  text-align: center;
+  padding: 0.5rem;
+  border: 1px dashed black;
+}
+
+.peca:hover {
+  cursor: grab;
+  animation: textHoverAnim 400ms ease-in-out 0s 1 normal forwards;
+}
+
+.slot {
+  border-radius: 1rem;
+  border: 2px solid black;
+}
+
+.slot:hover {
+  animation: slotHoverAnim 250ms ease-in-out 0s 1 normal forwards;
+}
+
+.slot .peca:hover {
+  cursor: not-allowed;
+  animation: none;
+}
+
+.imgslot {
+  height: 100px;
+  width: 100px;
   border: 1px solid black;
+  padding: 1rem;
 }
 
 .textslot {
@@ -35,11 +68,6 @@
   padding: 0.5rem;
   width: 3rem;
   height: 1rem;
-}
-
-.peca {
-  cursor: grab;
-  padding: 0.5rem;
 }
 
 #mydiv {
@@ -56,4 +84,31 @@
   z-index: 10;
   background-color: #2196f3;
   color: #fff;
+}
+
+.retry {
+  margin: auto;
+  width: 80px;
+  border: 1px solid black;
+  border-radius: 10rem;
+}
+
+@keyframes textHoverAnim {
+  0% {
+    width: calc(var(--wdt) * 1);
+  }
+  100% {
+    width: calc(var(--wdt) * 1.5);
+    font-size: 1.5rem;
+    rotate: 5deg;
+  }
+}
+
+@keyframes slotHoverAnim {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: -2deg;
+  }
 }
