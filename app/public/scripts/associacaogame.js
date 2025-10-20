@@ -1,7 +1,7 @@
 storageFunc();
 
 var wordset = [];
-var index = Number(getPalavrasAssocN());
+var index = Number(getPalavrasAssocN()) - 1;
 var word = "";
 var acertos = 0;
 
@@ -12,7 +12,7 @@ const azul = "#9dcfeeff",
 fetch("../../../public/data/associacao.json")
   .then((res) => res.json())
   .then((data) => {
-    wordset = shuffleArray(data, 10);
+    wordset = shuffleArray(data, index + 1);
     console.log(wordset);
     gameStep();
   });
@@ -47,7 +47,7 @@ function shuffleAltern(ch) {
 }
 
 function gameStep() {
-  if (index == 0) {
+  if (index < 0) {
     openModal();
     document.getElementById("acertos").innerText = acertos;
     addPalavrasAssocAcertos(acertos);
